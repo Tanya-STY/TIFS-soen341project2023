@@ -1,5 +1,3 @@
--Format for User Stories: As a user I would like to do …........
-
 # Stories Backlog - Sprint #1
 
 ## User Story #1
