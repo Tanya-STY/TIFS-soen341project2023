@@ -22,13 +22,13 @@ The goal of this project is to provide a platform for career services where stud
 * **Fadoua Doghmane** (GitHub Username: dogmen6)
   * Roles: project manager, technical lead, developer, UX designer
   * Strengths: creativity and detail-oriented
-* ** Ihana Fahmy ** (GitHub Username: ihanaaa)
+* **Ihana Fahmy** (GitHub Username: ihanaaa)
   * Roles: developer, QA lead, tester, software security engineer
   * Strengths: communication and creativity
-* ** Shamma Markis ** (GitHub Username: shamma13)
+* **Shamma Markis** (GitHub Username: shamma13)
   * Roles: developer, QA engineer, tester, software security engineer
   * Streghts: dedicated and problem-solving skills
-* ** Tanya So Tin Yan ** (GitHub Username: Tanya-STY)
+* **Tanya So Tin Yan** (GitHub Username: Tanya-STY)
   * Roles: business analyst, project manager, developer, UI designer
   * Strenghts: multitasking and organizational skills
 
