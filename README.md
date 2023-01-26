@@ -19,7 +19,7 @@ The goal of this project is to provide a platform for career services where stud
 * More to come!
 
 ## Team Members and Roles
-* ** Fadoua Doghmane ** (GitHub Username: dogmen6)
+* **Fadoua Doghmane** (GitHub Username: dogmen6)
   * Roles: project manager, technical lead, developer, UX designer
   * Strengths: creativity and detail-oriented
 * ** Ihana Fahmy ** (GitHub Username: ihanaaa)
