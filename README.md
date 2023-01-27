@@ -27,7 +27,7 @@ The goal of this project is to provide a platform for career services where stud
   * Strengths: communication and creativity
 * **Shamma Markis** (GitHub Username: shamma13)
   * Roles: developer, QA engineer, tester, software security engineer
-  * Streghts: dedicated and problem-solving skills
+  * Strenghts: dedicated and problem-solving skills
 * **Tanya So Tin Yan** (GitHub Username: Tanya-STY)
   * Roles: business analyst, project manager, developer, UI designer
   * Strenghts: multitasking and organizational skills
