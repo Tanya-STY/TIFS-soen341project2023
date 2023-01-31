@@ -6,12 +6,12 @@ As a user I would like to browse for specific job offers that are related to my 
 
 ## User Story #2
 
-As a user I would like to be able to communicate with employers or students by sending messages or requests
+As a user I would like to be able to communicate with employers or students by sending email notifications
 
 
 ## User Story #3
 
-As a user I would like to do ......
+As a user I would like to have a navigation bar that gives me access to all the different pages of the website directly 
 
 
 ## User Story #4
