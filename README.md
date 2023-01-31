@@ -1,4 +1,4 @@
-# "TIFS" (to be modified)
+# "TIFS"
 ### SOEN341 Winter 2023
 
 ## Table of Contents
@@ -44,6 +44,7 @@ The goal of this project is to provide a platform for career services where stud
 
 
 ## Project Approach
+In order to complete our career services application on time, we will work using the agile approach. The first steps will be to brainstorm all the steps needed to build a successful career website and break them down into different sprints based on their complexity. We will also hold weekly meetings with all team members to monitor the progress of the project and discuss any issues or potential problems. This will ensure that we always stay on track and feel confident in our project.
 
 ## Technology
 * TBD
