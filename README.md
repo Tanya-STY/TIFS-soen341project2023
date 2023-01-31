@@ -16,7 +16,9 @@ The goal of this project is to provide a platform for career services where stud
 * Manageable profiles and postings - Admin
 * Log In and Sign up
 * Apply to different jobs 
-* More to come!
+* Easy browsing and finding of companies and of candidates
+* Upload CVs and cover letters 
+* Manage specified job postings
 
 ## Team Members and Roles
 * **Fadoua Doghmane** 
