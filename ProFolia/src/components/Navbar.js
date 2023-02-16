@@ -1,5 +1,6 @@
 import { Component } from "react";
 import "./NavbarStyles.css"
+import Searchbar from './Searchbar'
 
 class Navbar extends Component{
     state={clicked: false};
@@ -15,11 +16,14 @@ class Navbar extends Component{
                 </a>
                 <div>
                     <ul id="navbar" className={this.state.clicked ? "#navbar active" : "#navbar"}>
+                    
+                        <Searchbar/>
                         <li><a className="active" href="index.html">Home</a></li>
                         <li><a href="index.html">Jobs</a></li>
                         <li><a href="index.html">Companies</a></li>
                         <li><a href="index.html">FAQs</a></li>
                         <li><a href="index.html">About Us</a></li>
+                       
                     </ul>
                 </div>
                 <div id="mobile" onClick={this.handleClick}>

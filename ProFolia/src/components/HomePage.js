@@ -10,11 +10,6 @@ function HomePage(){
     return(
         <div>
             <Navbar/>
-            {/* <div class="wrapper" id="container">
-                <img src="https://turing.com/blog/wp-content/uploads/2021/03/4203236-scaled.jpg" className="MainPage"></img>
-                <div id="abc"><center>This is my div!</center></div>
-                
-            </div> */}
             
             <div class="container">
                 <img src={coverPic} id="imageCover"></img>
