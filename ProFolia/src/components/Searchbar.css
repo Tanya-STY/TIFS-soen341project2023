@@ -1,0 +1,9 @@
+#searchBar{
+    width: 100%;
+    height: 45px;
+    background:#d0bdf4;
+    border:none;
+    padding:0.5rem;
+    align-items: center;
+    opacity: 0.8;
+}
