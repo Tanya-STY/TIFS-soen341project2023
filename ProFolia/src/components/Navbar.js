@@ -23,7 +23,6 @@ class Navbar extends Component{
                         <li><a href="index.html">Companies</a></li>
                         <li><a href="index.html">FAQs</a></li>
                         <li><a href="index.html">About Us</a></li>
-                       
                     </ul>
                 </div>
                 <div id="mobile" onClick={this.handleClick}>

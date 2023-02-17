@@ -1,7 +1,7 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
-import Searchbar from './Searchbar'
-import coverPic from '/Users/tanyaso/Documents/TIFS-soen341project2023/ProFolia/src/img/Mainpage.jpeg'
+// import Searchbar from './Searchbar'
+import HomePagePic from '/Users/tanyaso/Documents/TIFS-soen341project2023/ProFolia/src/img/HomePage.jpeg'
 import './HomePage.css'
 
 
@@ -12,8 +12,8 @@ function HomePage(){
             <Navbar/>
             
             <div class="container">
-                <img src={coverPic} id="imageCover"></img>
-                <div class="overlay"><Searchbar/></div>
+                <img src={HomePagePic} id="imageCover"></img>
+                {/* <div class="overlay"><Searchbar/></div> */}
             </div>
 
 

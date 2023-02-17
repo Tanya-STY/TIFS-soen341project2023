@@ -34,10 +34,10 @@ return (
 		</Column>
 		<Column>
 			<Heading>Contact Us</Heading>
-			<FooterLink href="#">Uttar Pradesh</FooterLink>
-			<FooterLink href="#">Ahemdabad</FooterLink>
-			<FooterLink href="#">Indore</FooterLink>
-			<FooterLink href="#">Mumbai</FooterLink>
+			<FooterLink href="#">ProFolia</FooterLink>
+			<FooterLink href="#">Our Team</FooterLink>
+			<FooterLink href="#">Montreal</FooterLink>
+			<FooterLink href="#">Socials</FooterLink>
 		</Column>
  		<Column>
  			<Heading>Social Media</Heading>

@@ -1,12 +1,13 @@
 import './App.css';
 import HomePage from './components/HomePage';
-import React from 'react';
+import MainPage from './components/MainPage/MainPage';
 
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      <MainPage/>
+      {/* <HomePage/> */}
     </div>
   );
 }
