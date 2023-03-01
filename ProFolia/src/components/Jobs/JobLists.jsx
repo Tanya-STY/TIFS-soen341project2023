@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import {FaSearch} from "react-icons/fa";
+import {FaMapMarkerAlt} from "react-icons/fa";
+
 
 import jobs from "../../data/data";
 import { Link } from "react-router-dom";
@@ -42,6 +45,7 @@ const JobLists = () => {
     }
   };
 
+  
   return (
     <section className="job__list">
       <div className="container">
@@ -49,11 +53,11 @@ const JobLists = () => {
           <div className="search__panel">
             <div className="search__panel-01">
               <span>
-                <i class="ri-search-line"></i>
+                <i><div><FaSearch/></div></i>
               </span>
               <input
                 type="text"
-                placeholder="Search by title, companies"
+                placeholder="Search by keywords"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -61,7 +65,7 @@ const JobLists = () => {
 
             <div className="search__panel-02">
               <span>
-                <i class="ri-map-pin-line"></i>
+                <i><div><FaMapMarkerAlt/></div></i>
               </span>
               <input
                 type="text"
