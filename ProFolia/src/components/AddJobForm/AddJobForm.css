@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
+
+
+
+*{
+    font-family: "Fredoka", sans-serif;
+}
+
+
+
+.jobType{
+    border-radius: 0.3rem;
+}
+
+.textJob{
+    margin-left: 10px;
+    border-radius: 0.3rem;
+}
+
+
+
+textarea{
+    width: 50%;
+    height: 80px;
+    max-height: fit-content;
+}
+
+.submit{
+    margin: 0px;
+    width: 200px;
+    border-radius: 0.6rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .jobType{
+        border-radius: 0.3rem;
+    }
+    
+    .textJob{
+        margin-left: 5px;
+        border-radius: 0.3rem;
+    }
+    
+    textarea{
+        width: 100%;
+        height: 40px;
+        max-height: fit-content;
+    }
+    
+    .submit{
+        margin: 0px;
+        width: 100px;
+        border-radius: 0.6rem;
+    }
+}
