@@ -50,3 +50,4 @@ In order to complete our career services application on time, we will work using
 * Front-end - React.js
 * Back-end - Flask using Python
 
+Video Sprint 2 (Job Posting Feature) : https://drive.google.com/file/d/1fHQpJX7cKr2C7eIj5nR5H5go7tW7nfKJ/view?usp=sharing
