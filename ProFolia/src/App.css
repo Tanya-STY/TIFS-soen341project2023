@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -12,13 +13,13 @@ body {
 
 h1,
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: #000;
 }
 
 .btn {
-  background: #7c5dfa;
+  background: #234497;
   padding: 7px 15px;
   border: none;
   outline: none;
@@ -38,8 +39,8 @@ p {
   width: 100%;
   height: 150px;
   line-height: 150px;
-  background: #7c5dfa;
-  border-radius: 0px 0px 0px 50px;
+  background: #234497;
+  border-radius: 0px 0px 30px 30px;
 }
 
 .container {
@@ -51,12 +52,14 @@ p {
 
 .header h1 {
   color: #fff;
+  font-size: 2.2rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .job__list__wrapper {
   padding: 30px;
   margin-top: -30px;
-  background: #fff;
+  background: #f1f1f1;
   border-radius: 10px;
 }
 
@@ -80,10 +83,12 @@ p {
 .search__panel-01 {
   padding: 15px 25px;
   width: 330px;
+  background-color: #fff;
 }
 
 .search__panel-02 {
   padding: 10px 25px;
+  background-color: #fff;
 }
 
 .search__panel-03 select {
@@ -104,7 +109,7 @@ p {
 
 .search__panel-01 span i,
 .search__panel-02 span i {
-  color: #7c5dfa;
+  color: #234497;
 }
 
 .jobs__wrapper {
@@ -147,13 +152,13 @@ p {
 }
 
 .location p span {
-  color: #7c5dfa;
+  color: #234497;
 }
 
 .details__wrapper {
   margin-top: -30px;
   padding: 30px;
-  background: #fff;
+  background: #f1f1f1;
   border-radius: 10px;
 }
 
@@ -168,16 +173,15 @@ p {
 }
 
 .details__top button {
-  padding: 7px 25px;
-
-  border-radius: 5px;
+  /* padding: 7px 25px; */
+  width: 200px;
   background: #7c5dfa3b;
   border: none;
 }
 
 .details__top button a {
   text-decoration: none;
-  color: #7c5dfa;
+  color: #234497;
   font-size: 0.9rem;
 }
 
@@ -202,7 +206,7 @@ p {
 .about__job span {
   font-size: 0.9rem;
   font-weight: 400;
-  color: #7c5dfa;
+  color: #234497;
 }
 
 .about__job {
