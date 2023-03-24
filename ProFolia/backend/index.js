@@ -19,10 +19,17 @@
 const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
+const session = require('express-session');
+const path = require("path");
 
 const app = express();
 
+app.use(session({
+    secret: 'jsfgfjguwrg8783wgbjs849h2fu3cnsvh8wyr8fhwfvi2g225',
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.use(express.json());
 
@@ -53,6 +60,7 @@ app.post('/register', (req, res) => {
         (err, result) => {
             if(result){
                 res.send(result);
+                // res.redirect("/typeuser");
             }else{
                 res.send({message: "ENTER CORRECT ASKED DETAILS!"})
             }
@@ -74,7 +82,9 @@ app.post("/login", (req, res) => {
                     // const fullname = user.fullname;
                     // const token = jwt.sign({userId: userId}, "jwtSecret", {expiresIn: "1h"});
                     // res.send({message: "LOGIN SUCCESSFUL"});
-                    res.redirect("http://localhost:3000/homepage");
+                    req.session.isLoggedIn = true;
+                    req.session.fullname = req.body.fullname;
+                    res.redirect("/homepage");
                 }else{
                     res.send({message: "WRONG EMAIL OR PASSWORD!"})
                 }
@@ -83,17 +93,50 @@ app.post("/login", (req, res) => {
     )
 })
 
-app.get('/dashboard', (req, res) => {
-    const userId = req.body.id;
-    const fullname = req.body.fullname;
-    con.query("SELECT fullname FROM accounts", (err, result) => {
+app.get('/homepage', (req, res) => {
+//     const userId = req.body.id;
+//     const fullname = req.body.fullname;
+//     con.query("SELECT fullname FROM accounts", (err, result) => {
+//         if (err) {
+//             console.error(err);
+//             res.status(500).send('Error retrieving user information');
+//         } else {
+//             const name = result[0].fullname;
+//             // Send a welcome message to the user
+//             res.send(`Welcome back, ${name}!`);
+//         }
+//     });
+// });
+    if (req.session.isLoggedIn) {
+        // Render the dashboard page
+        res.send(`Welcome back, ${req.session.fullname}!`);
+        // res.send('Welcome to the homepage');
+        console.log("reached the homepage");
+    } else {
+        // Redirect to the login page
+        res.redirect('/login');
+    }
+});
+
+app.get('/typeuser', (req, res) => {
+    if (req.session.isLoggedIn) {
+        // Render the dashboard page
+        res.send(`Welcome back, ${req.session.fullname}!`);
+        // res.send('Welcome to the homepage');
+        console.log("reached the homepage");
+    } else {
+        // Redirect to the login page
+        res.redirect('/login');
+    }
+});
+
+app.get('/logout', (req, res) => {
+    req.session.isLoggedIn = false;
+    req.session.destroy(err => {
         if (err) {
             console.error(err);
-            res.status(500).send('Error retrieving user information');
         } else {
-            const name = result[0].fullname;
-            // Send a welcome message to the user
-            res.send(`Welcome back, ${name}!`);
+            res.redirect('/login');
         }
     });
 });

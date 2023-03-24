@@ -15,10 +15,14 @@ import logo from './logo.svg';
 // import AddJobForm from './components/AddJobForm/AddJobForm';
 import './App.css';
 
+import React from 'react';
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Homepage from "./components/HomePage";
+import MainPage from "./components/MainPage/MainPage";
+import TypeUser from "./components/TypeUser";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 
@@ -26,10 +30,11 @@ function App() {
   return (
       // <BrowserRouter>
         <Routes>
-            <Route path='/' element={<Register/>} />
+            <Route path='/' element={<MainPage/>} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/homepage' element={<Homepage />} />
+            <Route path='/typeuser' element={<TypeUser />} />
             <Route path='/dashboard' element={<Dashboard />} />
           {/*<Route path="/dashboard">*/}
           {/*  <Navbar/>*/}

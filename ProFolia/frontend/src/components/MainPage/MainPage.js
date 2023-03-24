@@ -1,5 +1,5 @@
 import React from 'react'
-import CoverPic from '/Users/Mohamed/Desktop/SOEN 341/ProFolia/src/img/MainPage.png'
+import CoverPic from '/Users/Shamma/Desktop/web/ProFolia/frontend/src/img/MainPage.png'
 import './MainPage.css'
 import NavBarMain from './NavBarMain'
 import FooterMain from './FooterMain'

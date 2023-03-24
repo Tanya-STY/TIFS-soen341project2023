@@ -21,6 +21,7 @@ const Login = () => {
             setLoginStatus(response.data.message);
         }else{
             setLoginStatus(response.data[0].email);
+            history('/homepage');
         }
     })
 }
