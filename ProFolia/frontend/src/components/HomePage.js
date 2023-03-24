@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 // import Searchbar from './Searchbar'
-import HomePagePic from '/Users/Mohamed/Desktop/SOEN 341/ProFolia/src/img/HomePage.jpeg'
+import HomePagePic from '/Users/Shamma/Desktop/New folder/TIFS-soen341project2023/ProFolia/frontend/src/img/HomePage.jpeg'
 import './HomePage.css'
 
 

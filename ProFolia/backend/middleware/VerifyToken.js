@@ -1,4 +1,6 @@
 import jwt from "jsonwebtoken";
+import express from "express";
+const app = express();
 
 export const verifyToken = (req, res, next) => {
     const authHeader = req.headers['authorization'];
@@ -10,3 +12,7 @@ export const verifyToken = (req, res, next) => {
         next();
     })
 }
+
+app.get('/protected', verifyToken, (req,res) => {
+    res.send("protected endpoint accessed")
+})

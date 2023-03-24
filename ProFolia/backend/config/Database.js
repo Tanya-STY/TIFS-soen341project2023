@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize"; //represent data as objects
 
-const db = new Sequelize('login_career', 'root', '', {
+const db = new Sequelize('registrations', 'root', '', {
     host: "localhost",
     dialect: "mysql"
 });

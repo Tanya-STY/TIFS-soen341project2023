@@ -10,10 +10,6 @@ const Dashboard = () => {
     const [users, setUsers] = useState([]);
     const history = useNavigate();
 
-    useEffect(() => {
-        refreshToken();
-        getUsers();
-    }, []);
 
     const refreshToken = async () => {
         try {
