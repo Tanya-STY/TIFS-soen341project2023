@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { IconContext } from "react-icons";
 // import { FaEdit } from "react-icons/fa";
 import './EmployerProfile.css';
 
 
 function EmployerProfile() {
-    const [name, setName] = useState('John Doe'); // Initialize the user's name
+    const [name, setName] = useState(''); // Initialize the user's name
     const [image, setImage] = useState('https://cvhrma.org/wp-content/uploads/2015/07/default-profile-photo.jpg'); // Initialize the profile pic
   const [isEditing, setIsEditing] = useState(false);
 
@@ -26,7 +26,16 @@ function EmployerProfile() {
     dayToDay2: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem "
   });
 
-  
+
+    useEffect(() => {
+        const cookieValue = document.cookie
+            .split("; ")
+            .find((cookie) => cookie.startsWith("fullname="))
+            ?.split("=")[1];
+        if (cookieValue) {
+            setName(cookieValue);
+        }
+    }, []);
 
  
   
@@ -44,6 +53,7 @@ function EmployerProfile() {
     const newName = prompt('Enter a new name'); // Display a prompt to enter a new name
     if (newName) {
       setName(newName); // Update the user's name
+        document.cookie = `name=${newName}`;
     }
   }
 

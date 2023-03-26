@@ -19,9 +19,9 @@ const Login = () => {
     }).then((response) => {
         if(response.data.message){
             setLoginStatus(response.data.message);
+            window.location.replace("/homepage")
         }else{
             setLoginStatus(response.data[0].email);
-            history('/homepage');
         }
     })
 }

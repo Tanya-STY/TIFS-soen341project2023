@@ -12,7 +12,7 @@ function HomePage(){
             <Navbar/>
             
             <div class="container">
-                <img src={HomePagePic} id="imageCover"></img>
+                <img src={HomePagePic} id="imageCover" alt={''}></img>
                 {/* <div class="overlay"><Searchbar/></div> */}
             </div>
 

@@ -18,7 +18,7 @@ class NavBarMain extends Component{
                 <div>
                     <ul id="navbar" className={this.state.clicked ? "#navbar active" : "#navbar"}>
                         <li><button id="buttonSign" className="buttonSign" onClick={()=> window.location.replace("/login")}>Sign In</button></li>
-                        <li><button id="buttonSign" class="buttonSign" onClick={()=> window.location.replace("/register")}>Sign Up</button></li>
+                        <li><button id="buttonSign" className="buttonSign" onClick={()=> window.location.replace("/register")}>Sign Up</button></li>
                     </ul>
                 </div>
                 <div id="mobile" onClick={this.handleClick}>

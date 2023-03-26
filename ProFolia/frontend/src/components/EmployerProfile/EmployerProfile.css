@@ -152,7 +152,7 @@
     height: 30px;
     width: 130px;
     border-radius: .8rem;
-    z-index: 0;
+    z-index: 10;
     background-color: #fff;
     position: absolute;
     margin-top: 130px;
@@ -164,7 +164,7 @@
         height: 30px;
         width: 130px;
         border-radius: .8rem;
-        z-index: 0;
+        z-index: 10;
         background-color: #fff;
         position: absolute;
         margin-top: 130px;
@@ -175,7 +175,7 @@
         height: 30px;
         width: 130px;
         border-radius: .8rem;
-        z-index: 0;
+        z-index: 10;
         background-color: #fff;
         position: absolute;
         margin-top: 130px;

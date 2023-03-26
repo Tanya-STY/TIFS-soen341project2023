@@ -13,7 +13,7 @@ function MainPage(){
             
             <NavBarMain/>
             <div class="container">
-                <img src={CoverPic} id="imageCover"></img>
+                <img src={CoverPic} id="imageCover" alt={''}></img>
                 {/* <div class="overlay"><Searchbar/></div> */}
             </div>
             <FooterMain/>
