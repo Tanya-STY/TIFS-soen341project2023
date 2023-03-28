@@ -1,15 +1,61 @@
-import React from "react";
 
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-
 import jobs from "../data/data";
+import './JobDetails.css';
 
-import { Link } from "react-router-dom";
 
-const JobDetails = () => {
+function JobDetails(){
   const { position } = useParams();
 
   const job = jobs.find((job) => job.position === position);
+
+  const [showForm, setShowForm] = useState(false);
+
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [file, setFile] = useState("");
+
+  const handleApplyClick = () => {
+    setShowForm(true);
+  };
+
+  const handleNameChange = (e) => {
+    setFullName(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleResumeChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+ 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('fullName', fullName);
+    formData.append('email', email);
+    formData.append('file', file);
+
+    fetch('http://localhost:3000/submit-form', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.text())
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.error('Error submitting form: ', error);
+      });
+  };
+
+
+  
 
   return (
     <section>
@@ -20,9 +66,9 @@ const JobDetails = () => {
               <h1>{job.company}</h1>
             </div>
 
-            <button>
+            {/* <button>
               <Link to={job.companySite}>Company Site</Link>
-            </button>
+            </button> */}
           </div>
 
           <div className="job__details">
@@ -35,7 +81,9 @@ const JobDetails = () => {
                 <span>{job.location}</span>
               </div>
 
-              <button className="btn">Apply</button>
+              <button className="btn" onClick={handleApplyClick}>
+                Apply
+              </button>
             </div>
 
             <p className="job__desc">{job.desc}</p>
@@ -63,6 +111,36 @@ const JobDetails = () => {
           </div>
         </div>
       </div>
+
+      {showForm && (
+        <div className="pop-upWindow" style={{opacity:"1"}}>
+          <div className="form__wrapper">
+            <form onSubmit={handleSubmit}>
+              <div>
+              <label htmlFor="name" className="formApply">Name</label>
+              <input type="text" id="name" onChange={handleNameChange}/>
+              </div>
+              <div>
+              <label htmlFor="email" className="formApply">Email</label>
+              <input type="email" id="email" onChange={handleEmailChange}/>
+              </div>
+              <div>
+              <label htmlFor="resume" className="formApply">Resume</label>
+              <input type="file" id="resume" onChange={handleResumeChange}/>
+              </div>
+              <div>
+              <button type="submit" className="formApply" onClick={handleSubmit}>Submit</button>
+              <button className="close__btn" onClick={() => setShowForm(false)}>
+              X
+              </button>
+              </div>
+            </form>
+
+            
+            
+          </div>
+        </div>
+      )}
     </section>
   );
 };

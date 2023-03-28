@@ -48,6 +48,6 @@ In order to complete our career services application on time, we will work using
 
 ## Technology
 * Front-end - React.js
-* Back-end - Flask using Python
+* Back-end - React.js
 
 Video Sprint 3 (Notification and Job Posting Feature) : https://drive.google.com/file/d/1_hAckyhF7m3gUkcj1vp0i2_wEAEAzya7/view?usp=share_link
