@@ -9,6 +9,7 @@ function EmployerProfile() {
     const [image, setImage] = useState('https://cvhrma.org/wp-content/uploads/2015/07/default-profile-photo.jpg'); // Initialize the profile pic
   const [isEditing, setIsEditing] = useState(false);
 
+
   const [formValues, setFormValues] = useState({
     positionTitle: "Intern",
     location: "Montreal",
@@ -26,7 +27,41 @@ function EmployerProfile() {
     dayToDay2: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem "
   });
 
-  
+  const [postings, setPostings] = useState([]);
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [location, setLocation] = useState('');
+  const [requirement, setRequirement] = useState('');
+  const [dayToDay, setDayToDay] = useState('');
+
+  const addPosting = () => {
+    const newPosting = {
+      id: Date.now(),
+      title,
+      location,
+      description,
+      requirement,
+      dayToDay
+    };
+    setPostings([...postings, newPosting]);
+    setTitle();
+    setLocation('');
+    setDescription('');
+    setRequirement('');
+    setDayToDay('');
+    
+  };
+
+  const deletePosting = (id) => {
+    const updatedPostings = postings.filter(posting => posting.id !== id);
+    setPostings(updatedPostings);
+  };
+
+  const handleSubmit2 = (event) => {
+    event.preventDefault();
+    addPosting();
+    setIsEditing(false);
+  };
 
  
   
@@ -34,10 +69,12 @@ function EmployerProfile() {
     setIsEditing(true);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setIsEditing(false);
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   setIsEditing(false);
+  // };
+
+  
 
 
   function handleEdit() {
@@ -93,7 +130,7 @@ function EmployerProfile() {
                 </label>
             </button>
     </div>
-    <div><button className="addJob-butt">Add Job</button></div> {/* Display the edit button */}
+    <div><button className="addJob-butt" onClick={handleClick}>Add Job</button></div> {/* Display the edit button */}
     <div className="profile-head">
     </div>
     <div className="profile-head" style={{marginTop:'5px'}}>
@@ -105,25 +142,30 @@ function EmployerProfile() {
         <div className="one-job">
         <div className="form-wrapper">
             <div className="form-values">
-            <p>Position Title: {formValues.positionTitle}</p>
-            <p>Location: {formValues.location}</p>
-            <p className="job-descrip">Job Description: {formValues.jobDescription}</p>
-            <p className="job-descrip">Job Requirements: {formValues.jobRequirements}</p>
-            <p className="job-descrip">Day-to-Day: {formValues.dayToDay}</p>
+                  {postings.map(posting => (
+                   
+                <div key={posting.id} className="newJob-list">
+                  <div><h2 style={{marginBottom:'10px'}}>{posting.title}</h2></div>
+                  <div>{posting.location}</div>
+                  <div style={{textOverflow:'ellipsis', whiteSpace:'nowrap', overflow:'hidden', maxWidth:'80%'}}>{posting.description}</div>
+                  <div style={{textOverflow:'ellipsis', whiteSpace:'nowrap', overflow:'hidden', maxWidth:'80%'}}>{posting.requirement}</div>
+                  <div style={{textOverflow:'ellipsis', whiteSpace:'nowrap', overflow:'hidden', maxWidth:'80%'}}>{posting.dayToDay}</div>
+                  <div><button onClick={() => deletePosting(posting.id)}>Delete</button></div>
+                  <div><button>Edit</button></div>
+                </div>
+              ))}
             </div>
             <div>
-            <button className="edit-icon" onClick={handleClick}>
-            Edit
-            </button>
+            
             </div>
             
 
         </div>
         {isEditing && (
-            <div className="overlay">
+            <div className="overlay" style={{opacity:'1'}}>
             <div className="form-popup">
-                <form onSubmit={handleSubmit}>
-                <label>
+                <form onSubmit={handleSubmit2}>
+                {/* <label>
                     Position Title:
                     <input
                     type="text"
@@ -131,44 +173,47 @@ function EmployerProfile() {
                     value={formValues.positionTitle}
                     onChange={handleChange}
                     />
+                </label> */}
+                <label>
+                  Position Title:
+                  <input
+                    type="text"
+                    value={title}
+                    onChange={(event) => setTitle(event.target.value)}
+                  />
                 </label>
-                <br />
                 <label>
                     Location:
                     <input
                     type="text"
-                    name="location"
-                    value={formValues.location}
-                    onChange={handleChange}
+                    value={location}
+                    onChange={(event) => setLocation(event.target.value)}
                     />
                 </label>
-                <br />
                 <label>
                     Job Description:
                     <textarea
-                    name="jobDescription"
-                    value={formValues.jobDescription}
-                    onChange={handleChange}
-                    ></textarea>
+                    type="text"
+                    value={description}
+                    onChange={(event) => setDescription(event.target.value)}
+                    />
                     
                 </label>
-                <br />
                 <label>
                     Job Requirements:
                     <textarea
-                    name="jobRequirements"
-                    value={formValues.jobRequirements}
-                    onChange={handleChange}
-                    ></textarea>
+                    type="text"
+                    value={requirement}
+                    onChange={(event) => setRequirement(event.target.value)}
+                    />
                 </label>
-                <br />
                 <label>
                     Day-to-Day:
                     <textarea
-                    name="dayToDay"
-                    value={formValues.dayToDay}
-                    onChange={handleChange}
-                    ></textarea>
+                    type="text"
+                    value={dayToDay}
+                    onChange={(event) => setDayToDay(event.target.value)}
+                    />
                 </label>
                 <br />
                 <button type="submit">Save</button>
@@ -179,85 +224,7 @@ function EmployerProfile() {
         )}
         </div>
         </>
-        <>
-        <div className="one-job">
-        <div className="form-wrapper">
-            <div className="form-values">
-            <p>Position Title: {formValues2.positionTitle2}</p>
-            <p>Location: {formValues2.location2}</p>
-            <p className="job-descrip">Job Description: {formValues2.jobDescription2}</p>
-            <p className="job-descrip">Job Requirements: {formValues2.jobRequirements2}</p>
-            <p className="job-descrip">Day-to-Day: {formValues2.dayToDay2}</p>
-            </div>
-            <div>
-            <button className="edit-icon" onClick={handleClick}>
-            Edit
-            </button>
-            </div>
-            
-
-        </div>
-        {isEditing && (
-            <div className="overlay">
-            <div className="form-popup">
-                <form onSubmit={handleSubmit}>
-                <label>
-                    Position Title:
-                    <input
-                    type="text"
-                    name="positionTitle2"
-                    value={formValues2.positionTitle2}
-                    onChange={handleChange}
-                    />
-                </label>
-                <br />
-                <label>
-                    Location:
-                    <input
-                    type="text"
-                    name="location2"
-                    value={formValues2.location2}
-                    onChange={handleChange}
-                    />
-                </label>
-                <br />
-                <label>
-                    Job Description:
-                    <textarea
-                    name="jobDescription2"
-                    value={formValues2.jobDescription2}
-                    onChange={handleChange}
-                    ></textarea>
-                    
-                </label>
-                <br />
-                <label>
-                    Job Requirements:
-                    <textarea
-                    name="jobRequirements2"
-                    value={formValues2.jobRequirements2}
-                    onChange={handleChange}
-                    ></textarea>
-                </label>
-                <br />
-                <label>
-                    Day-to-Day:
-                    <textarea
-                    name="dayToDay2"
-                    value={formValues2.dayToDay2}
-                    onChange={handleChange}
-                    ></textarea>
-                </label>
-                <br />
-                <button type="submit">Save</button>
-
-                </form>
-            </div>
-            </div>
-        )}
-        </div>
-        </>
-
+       
     </div>
     </div>
   );
