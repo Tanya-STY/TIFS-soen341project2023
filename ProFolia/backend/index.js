@@ -141,6 +141,52 @@ app.get('/logout', (req, res) => {
     });
 });
 
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
+// Create a connection to the MySQL database
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'registrations',
+});
+
+// Connect to the MySQL database
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database: ' + err.stack);
+    return;
+  }
+  console.log('Connected to the database with ID: ' + connection.threadId);
+});
+
+// Enable CORS
+app.use(cors());
+
+// Post method
+app.post('/jobs/:position', upload.single('file'), (req, res) => {
+  const position = req.body.position;
+  const fullName = req.body.fullName;
+  const email = req.body.email;
+  const file = req.file;
+  
+  // Insert the data into the MySQL database
+  const sql = 'INSERT INTO users (fullName, email, filename, position) VALUES (?, ?, ?, ?)';
+  const values = [fullName, email, file.filename, position];
+  con.query(sql, values, (err, result) => {
+      if (err) {
+          console.error('Error inserting data into the database: ' + err.stack);
+          res.status(500).send('Error submitting form');
+          return;
+      }
+      console.log('Data inserted into the database with ID: ' + result.insertId);
+      console.log(position);
+      res.send('Form submitted successfully');
+  });
+  });
+
+
 app.listen(5000, () => {
     console.log("running backend server");
 })
