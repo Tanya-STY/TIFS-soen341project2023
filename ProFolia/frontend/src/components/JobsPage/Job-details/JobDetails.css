@@ -1,0 +1,130 @@
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .details__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .details__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .job__details {
+    margin-bottom: 2rem;
+  }
+  
+  .about__job {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .about__job h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about__job span {
+    font-size: 1rem;
+    color: #999;
+  }
+  
+  .btn {
+    background-color: #6750ea;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 1rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .job__desc {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .requirements h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .requirements p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .requirement__item li {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .responsibility h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .responsibility p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .responsibility__item li {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    list-style: decimal;
+  }
+  
+  .pop-upWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form__wrapper {
+    background-color: #cbc9c9;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    opacity: 1;
+  }
+  
+  .form__input {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .form__button {
+    background-color: #61dafb;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .formApply{
+    margin-right: 15px;
+  }
