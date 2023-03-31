@@ -22,11 +22,39 @@ nav{
 }
 
 #navbar li a{
-    text-decoration: none;
+    /* text-decoration: none;
     font-size: 1.3rcm;
     font-weight: 600;
     color: #845bb3;
     transition: 0.3s ease-in-out;
+    background-color:#3b4478 ;
+    border-radius: 0.5rem;
+    display: flex; */
+
+    background: #3b4478;
+    border-radius: 12px;
+    height: 40px;
+    width: 75px;
+    border: 2px;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.Jobs-butt{
+    background: #3b4478;
+    border-radius: 12px;
+    height: 40px;
+    width: 75px;
+    border: 2px;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
 }
 
 /* #navbar li a:hover,
