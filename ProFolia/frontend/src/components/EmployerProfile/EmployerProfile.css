@@ -11,12 +11,29 @@
 
 /* EditableForm.css */
 .form-wrapper {
-    width: 90%;
+    width: 95%;
     display: flex;
     align-items: center;
     background-color: aliceblue;
     border-radius:1.5rem;
     border: 1px solid black;
+  }
+
+  .posting {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* or margin-bottom: 1rem; */
+  }
+
+  .newJob-list{
+    width: 1325px;
+    height: fit-content;
+    /* display: flex;
+    align-items: center; */
+    border-radius: 0.8rem;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    padding: 10px;
   }
   
   .form-values {
@@ -32,31 +49,34 @@
     color: blue;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 115vh;
+    margin-left: 100vh;
   }
   
   .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
     display: flex;
+    margin-left: 25%;
+    margin-top: 5%;
+    height: 75%;
+    width: 50%;
+    background-color: lightgrey;
+    z-index: 999;
+    color: blue;
     justify-content: center;
     align-items: center;
+    border-radius: 0.8rem;
   }
+  
+
   
   .form-popup {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     width: 500px;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
     overflow-y: auto;
     border-radius: 5px;
-    position: relative;
+    position: flex;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
   
@@ -67,6 +87,7 @@
   
   .form-popup label {
     margin-top: 10px;
+    color: black;
   }
   
   .form-popup input,
@@ -115,7 +136,7 @@
 
   .job-list{
     display: block;
-
+    align-items: center;
   }
 
   .profile-head{
@@ -157,6 +178,7 @@
     position: absolute;
     margin-top: 130px;
     margin-left: 250px;
+    color: black;
     }
 
 
@@ -169,6 +191,15 @@
         position: absolute;
         margin-top: 130px;
         margin-left: 390px;
+        color: black;
+    }
+
+    #upload-butt:hover{
+      color: blue;
+    }
+
+    button.addJob-butt:hover{
+      color: blue;
     }
 
     button.addJob-butt{
@@ -180,4 +211,5 @@
         position: absolute;
         margin-top: 130px;
         margin-left: 530px;
+        color: black;
         }
