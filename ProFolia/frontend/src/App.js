@@ -32,7 +32,7 @@ function App() {
             <Route path='/homepage' element={<Homepage />} />
 
             <Route path="/jobs/*" element={<JobsPage />} />
-
+            <Route path="/employer-profile/*" element={<EmployerProfile />} />
 
             {/* <Route path='/typeuser' element={<TypeUser />} /> */}
             <Route path='/dashboard' element={<Dashboard />} />
