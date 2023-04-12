@@ -1,4 +1,4 @@
-// import express from "express";
+/ import express from "express";
 // import dotenv from "dotenv";
 // import cookieParser from "cookie-parser";
 // import cors from "cors";
@@ -50,23 +50,42 @@ const con = mysql.createConnection({
     database: "registrations"
 })
 
-app.post('/register', (req, res) => {
+app.post('/register', async(req, res) => {
     const email = req.body.email;
     const fullname = req.body.fullname;
     const password = req.body.password;
-    // const confPassword = req.body.confPassword;
+    const type_of_user = req.body.type_of_user;
 
-    con.query("INSERT INTO accounts (email, fullname, password) VALUES (?, ?, ?)", [email, fullname, password],
-        (err, result) => {
-            if(result){
-                res.send(result);
-                // res.redirect("/typeuser");
-            }else{
-                res.send({message: "ENTER CORRECT ASKED DETAILS!"})
-            }
+    // const encryptedPassword = await bcrypt.hash(password, 10);
+
+    con.query("SELECT * FROM accounts WHERE email = ?", [email], async(err, result) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send("Error checking email");
         }
-    )
-})
+        if (result.length > 0) {
+            // email already exists in the database
+            res.send({message: "EMAIL ALREADY EXISTS"});
+        } else {
+
+    con.query("INSERT INTO accounts (fullname, email, password, type_of_user) VALUES (?, ?, ?, ?)", [fullname, email, password, type_of_user],
+        (err, result) => {
+            if(err){
+                return res.status(500).send({message: "Error inserting data into database."})
+            }else{
+                const user = { email, fullname,type_of_user };
+                req.session.isLoggedIn = true;
+                req.session.fullname = fullname;
+                res.cookie('user', user);
+                console.log(type_of_user);
+                res.send({ status: "ok", message: 'User registered successfully' });
+
+            }
+        });
+        }
+    });
+});
+
 
 app.post("/login", (req, res) => {
     const email = req.body.email;
